@@ -23,9 +23,10 @@ Example:
 
 
 Out:
-    in: 一个测试
-    out: ['yi', 'ge', 'ce', 'shi']
-    out: yi-ge-ce-shi
-    in: google chrome版本32
-    out: [u'g', u'o', u'o', u'g', u'l', u'e', u' ', u'c', u'h', u'r', u'o', u'm', u'e', 'ban', 'ben', u'3', u'2']
-    out: g-o-o-g-l-e- -c-h-r-o-m-e-ban-ben-3-2
+
+     in: 一个测试
+     out: ['yi', 'ge', 'ce', 'shi']
+     out: yi-ge-ce-shi
+     in: google chrome版本32
+     out: [u'g', u'o', u'o', u'g', u'l', u'e', u' ', u'c', u'h', u'r', u'o', u'm', u'e', 'ban', 'ben', u'3', u'2']
+     out: g-o-o-g-l-e- -c-h-r-o-m-e-ban-ben-3-2
