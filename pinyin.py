@@ -30,6 +30,7 @@ class PinYin(object):
                 except:
                     line = f_line.split('   ')
                     self.word_dict[line[0]] = line[1]
+        f_obj.close()
 
 
     def hanzi2pinyin(self, string=""):
@@ -39,7 +40,12 @@ class PinYin(object):
         
         for char in string:
             key = '%X' % ord(char)
-            result.append(self.word_dict.get(key, char).split()[0][:-1].lower())
+            pychar = self.word_dict.get(key, char)
+            if pychar != char:
+                pychar = pychar.split()[0][:-1].lower()
+                pychar = pychar if pychar else char
+            result.append(pychar)
+            #result.append(self.word_dict.get(key, char).split()[0][:-1].lower())
 
         return result
 
@@ -55,7 +61,12 @@ class PinYin(object):
 if __name__ == "__main__":
     test = PinYin()
     test.load_word()
-    string = "钓鱼岛是中国的"
+    string = "一个测试"
+    print "in: %s" % string
+    print "out: %s" % str(test.hanzi2pinyin(string=string))
+    print "out: %s" % test.hanzi2pinyin_split(string=string, split="-")
+
+    string = "google chrome版本32"
     print "in: %s" % string
     print "out: %s" % str(test.hanzi2pinyin(string=string))
     print "out: %s" % test.hanzi2pinyin_split(string=string, split="-")
